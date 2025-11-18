@@ -1,0 +1,53 @@
+# Experiment Configuration
+experiment:
+  name: "cs182_final_project"
+  seed: 42
+  device: "cuda"  # or "cpu"
+  num_workers: 4
+  mixed_precision: true
+
+# Data Configuration
+data:
+  dataset: "cifar10"  # Options: cifar10, imagenet, custom
+  data_dir: "./data"
+  batch_size: 32
+  val_batch_size: 64
+  num_classes: 10
+  image_size: 224
+  augment: true
+
+# Model Configuration
+model:
+  type: "clip"  # Options: clip, vit, custom
+  vision_model: "ViT-B/32"  # Options: ViT-B/32, ViT-B/16, ViT-L/14, ResNet50
+  text_model: "bert-base-uncased"
+  embed_dim: 512
+  temperature: 0.07
+  freeze_vision: false
+  freeze_text: false
+
+# Training Configuration
+training:
+  epochs: 10
+  learning_rate: 1e-4
+  weight_decay: 0.01
+  warmup_steps: 1000
+  save_dir: "./checkpoints"
+  log_dir: "./logs"
+  save_every: 1
+  eval_every: 1
+  gradient_accumulation_steps: 1
+
+# Evaluation Configuration
+evaluation:
+  metrics: ["accuracy", "top5_accuracy", "f1_score"]
+  zero_shot: true
+  linear_probe: true
+
+# Logging Configuration
+logging:
+  use_wandb: false
+  wandb_project: "cs182-final-project"
+  use_tensorboard: true
+  log_every: 100
+

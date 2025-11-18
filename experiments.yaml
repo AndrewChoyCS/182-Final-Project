@@ -1,0 +1,12 @@
+# Experiment grid configuration
+# This file defines the parameter grid for running multiple experiments
+
+grid:
+  # Example: vary learning rate and batch size
+  # "training.learning_rate": [1e-4, 5e-5, 1e-5]
+  # "data.batch_size": [32, 64]
+  
+  # Uncomment and modify as needed for your experiments
+  # "model.temperature": [0.07, 0.1, 0.05]
+  # "training.learning_rate": [1e-4, 5e-5]
+
